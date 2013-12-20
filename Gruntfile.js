@@ -5,6 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('./package.json'),
     publicDir: 'public',
+    serverDir: 'server',
     srcDir: 'app',
 
     watch: {
@@ -92,6 +93,14 @@ module.exports = function(grunt) {
             cwd: '<%= srcDir %>/<%= publicDir %>',
             src: ['**/*.ls'],
             dest: '<%= publicDir %>',
+            ext: '.js',
+            filter: 'isFile'
+          },
+          {
+            expand: true,
+            cwd: '<%= srcDir %>/<%= serverDir %>',
+            src: ['**/*.ls'],
+            dest: '<%= serverDir %>',
             ext: '.js',
             filter: 'isFile'
           }

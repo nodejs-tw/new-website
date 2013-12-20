@@ -35,3 +35,7 @@ Example:
 ### Jade
 
 * [Jade](http://jade-lang.com/)
+
+## License
+
+Copyright (c) 2013 NodeJS.tw Licensed under the MIT license.

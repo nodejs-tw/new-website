@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-taiwan",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "taiwan"
+  ],
+  "author": "Po-Ying Chen (poying.me@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-livescript": "~0.5.1",
+    "grunt-contrib-stylus": "~0.11.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-copy": "~0.4.1"
+  }
+}

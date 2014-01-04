@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install": "grunt build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server/app.js"
+    "start": "node ./server/app.js",
+    "gen": "node ./tools/generator/index.js"
   },
   "keywords": [
     "nodejs",
@@ -22,6 +24,14 @@
     "grunt-contrib-copy": "~0.4.1"
   },
   "dependencies": {
-    "express": "~3.4.7"
+    "express": "~3.4.7",
+    "graceful-fs": "~2.0.1",
+    "glob": "~3.2.7",
+    "js-yaml": "~3.0.1",
+    "marked": "~0.3.0",
+    "pygmentize-bundled": "~2.1.0",
+    "jade": "~1.0.2",
+    "mkdirp": "~0.3.5",
+    "colors": "~0.6.2"
   }
 }

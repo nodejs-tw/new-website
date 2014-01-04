@@ -6,6 +6,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('./package.json'),
     publicDir: 'public',
     serverDir: 'server',
+    toolsDir: 'tools',
     srcDir: 'app',
 
     watch: {
@@ -30,7 +31,7 @@ module.exports = function(grunt) {
 
       ls: {
         files: ['<%= srcDir %>/**/*.ls', '!bower_components/**/*'],
-        tasks: ['livescript:js']
+        tasks: ['livescript']
       },
 
       image: {
@@ -103,6 +104,14 @@ module.exports = function(grunt) {
             dest: '<%= serverDir %>',
             ext: '.js',
             filter: 'isFile'
+          },
+          {
+            expand: true,
+            cwd: '<%= srcDir %>/<%= toolsDir %>',
+            src: ['**/*.ls'],
+            dest: '<%= toolsDir %>',
+            ext: '.js',
+            filter: 'isFile'
           }
         ]
       }
@@ -164,6 +173,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-livescript');
 
-  grunt.registerTask('default', ['copy', 'stylus:devPublic', 'jade:devPublic']);
-  grunt.registerTask('dev', ['copy', 'stylus:devPublic', 'jade:devPublic', 'watch']);
+  grunt.registerTask('default', ['copy', 'stylus:devPublic', 'jade:devPublic', 'livescript']);
+  grunt.registerTask('dev', ['copy', 'stylus:devPublic', 'jade:devPublic', 'livescript', 'watch']);
 };

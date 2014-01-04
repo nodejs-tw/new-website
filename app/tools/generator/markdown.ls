@@ -17,7 +17,7 @@ module.exports = ->
   trans = new stream.Transform
 
   trans._transform = (chunk, enc, cb) !->
-    buffer += chunk
+    buffer := buffer + chunk
     cb!
 
   trans._flush = (cb) !->
@@ -27,6 +27,6 @@ module.exports = ->
       else
         trans.push content
       cb!
-    buffer = null
+    buffer := null
 
   trans

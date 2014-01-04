@@ -16,6 +16,7 @@ script.main = !->
   @init !->
     console.log '  執行'
     console.log!
+    @generateAll!
 
 script.init = (cb) !->
   console.log '  初始化'
@@ -29,7 +30,13 @@ script.init = (cb) !->
     @types = @enum.slice!
 
   @generator.on \stream, @~onStream
-  @loadTemplates cb
+
+  _mkdir = @~mkdir
+  cb = cb.bind @
+
+  <- @loadTemplates
+  <- _mkdir
+  cb!
 
 script.getTypes = ->
   Object.keys config.generator || {}
@@ -78,35 +85,43 @@ script.generate = (type) !->
   @generator.generate pattern, {type: type}
 
 script.onStream = (stream) !->
-  console.log '    開始: {stream.data.file}'
+  console.log "    開始: #{stream.data.file}"
 
-  local = null
   template = @templates[stream.data.type] || ''
   type = config.generator[stream.data.type]
 
   source = type.source.split('*');
-  filedir = path.dirname stream.data.file.replace source[0] || '', ''
-  filename = path.basename stream.data.file, source.slice.pop() + \.html
-  filepath = path.join @basedir, filedir, filename
 
-  stream.on \meta, (meta) !->
-    local = meta
+  srcdir = path.join @basedir, source[0]
+  desdir = path.join @basedir, type.destination
+  if srcdir[srcdir.length - 1] == path.sep
+    srcdir = srcdir.substr 0, srcdir.length - 1
+  filepath = stream.data.file.replace(srcdir, desdir).replace(/\.md$/, '.html')
+
+  failed = (err) !->
+    console.log "    失敗: #{filepath}. (#{err.message})"
 
   stream.on \readable, !->
     var data
-    local.content = ''
+    content = ''
     while data = @.read()
-      local.content += data
-    html = jade.render template, {article: local || {}}
-    fs.writeFile filepath, html, (err) !->
+      content += data
+    stream.meta.content = content
+    html = jade.render template, {article: stream.meta}
+
+    mkdirp path.dirname(filepath), (err) !->
       if err
-        console.log '    失敗: {stream.data.file}. ({err.message})'
+        failed err
       else
-        console.log '    成功: {filepath}'
+        fs.writeFile filepath, html, (err) !->
+          if err
+            failed err
+          else
+            console.log "    成功: #{filepath}"
 
 script.exit = (err) !->
   if err
-    console.log 'Error: {err.message}'
+    console.log "Error: #{err.message}"
     process.exit 1
   else
     process.exit 0

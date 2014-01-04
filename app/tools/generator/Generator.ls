@@ -31,15 +31,18 @@ Generator.prototype.generate = (pattern, data || {}) ->
       fileStream.data = fileData
       process fileStream
 
-  glob pattern, @~globCb
+  glob pattern, globCb
   @
 
 Generator.prototype.process = (fileStream) ->
-  fileStream
+  stream = fileStream
     .pipe meta!
+    .on \meta, (meta) !->
+      stream.meta = meta
     .pipe markdown!
-  @emit \stream, fileStream
+  stream.data = fileStream.data
+  @emit \stream, stream
   @
 
 Generator.prototype.getFileStream = (file) ->
-  fs.createReadStream file
+  fs.createReadStream file, {encoding: 'utf8'}

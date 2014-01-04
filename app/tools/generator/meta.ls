@@ -19,33 +19,36 @@ module.exports = (options || {}) ->
       catch
         trans.emit \error, e
         trans.emit \meta, {}
+      buffer := ''
     else
       trans.emit \meta, {}
 
   trans._transform = (chunk, enc, cb) !->
+    chunk = chunk.toString!
     thisData = []
     contentData = []
     if metaEnd
+      @push chunk
+    else
       chunk.split '\n' .forEach (str) ->
         if metaEnd
           contentData.push str
         else if str.trim! == contentIdentifier
-          metaEnd = true
+          metaEnd := true
+          buffer := buffer + thisData.join '\n'
           emitMeta!
         else
           thisData.push str
-      buffer += thisData.join '\n'
       contentData = contentData.join '\n'
       if contentData
         @push contentData
-    else
-      @push chunk
     cb!
 
   trans._flush = (cb) !->
     @emit \meta {}
-    @push buffer
-    buffer = null
+    if !metaEnd
+      @push buffer
+    buffer := null
     cb!
 
   trans

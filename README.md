@@ -1,6 +1,6 @@
 # NodeJS 網站
 
-* [Hackpad](https://hackpad.com/NodeJS-Taiwan--L2PPmt2LIHC)
+* [Hackpad](https://nodejs-tw.hackpad.com/)
 
 ## 使用技術
 

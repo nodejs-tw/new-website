@@ -36,6 +36,28 @@ Example:
 
 * [Jade](http://jade-lang.com/)
 
+### Generator
+
+#### Config
+
+```json
+{
+  "generator": {
+    "[名稱]": {
+      "template": "[Template 檔案（Jade）]",
+      "source": "[Markdown  檔案來源]",
+      "destination": "[輸出目錄]"
+    }
+  }
+}
+```
+
+#### Command
+
+```bash
+node ./tools/generator/index.js [名稱1] [名稱2]
+```
+
 ## License
 
 Copyright (c) 2013 NodeJS.tw Licensed under the MIT license.

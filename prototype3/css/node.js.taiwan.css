@@ -1,20 +1,22 @@
+
 #nodejs{
   font-family: Arial;
   font-size: 14px;
 }
 #nodejs a{
-  color: #eee;
+  color: #0079B3;
   text-decoration: none;
   font-size: 14px;
 }
 #nodejs a:hover{
-  color: #FFF;
+  color: #666;
   text-decoration: none;
 }
 #nodejs .clearfix:before,
 #nodejs .clearfix:after{
   display:table;line-height:0;content:""
 }
+
 #nodejs .clearfix:after{
   clear:both;
 }
@@ -43,8 +45,16 @@
 #nodejs .nodejs__container{
   width: 960px;
   margin: 0 auto;
-  
 }
+
+@media screen and (max-width: 960px) {
+  #nodejs .nodejs__container{
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+
 #header{
   padding: 15px;
   border: none;

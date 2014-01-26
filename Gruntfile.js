@@ -141,6 +141,18 @@ module.exports = function(grunt) {
         ]
       },
 
+      css: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= srcDir %>/<%= publicDir %>',
+            src: ['**/*.css'],
+            dest: '<%= publicDir %>',
+            filter: 'isFile'
+          }
+        ]
+      },
+
       images: {
         files: [
           {

@@ -4,6 +4,11 @@
       "template": "./templates/column.jade",
       "source": "./source/column/**/*.md",
       "destination": "./articles/column"
+    },
+    "index":{
+      "template":"./templates/index.jade",
+      "source": "./source/index/**/index.md",
+      "destination": "./index"
     }
   }
 }

@@ -28,7 +28,7 @@ var archive = [{"href":"http://nodejs-tw.tumblr.com/post/40671921582/node-js-tai
         data += 'type: activity\n\r';
         data += '---\n\r';
         data += html2markdown(post.html());
-        fs.writeFileSync('tumblr/' + title + '.md', data);
+        fs.writeFileSync('tumblr/' + title.replace('/','or') + '.md', data);
         console.log('COMPLETED: ' + title);
 
         index += 1;

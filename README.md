@@ -55,7 +55,13 @@ Example:
 #### Command
 
 ```bash
-node ./tools/generator/index.js [名稱1] [名稱2]
+$ node ./tools/generator/index.js [名稱1] [名稱2]
+```
+
+or
+
+```bash
+$ npm run gen
 ```
 
 ## License

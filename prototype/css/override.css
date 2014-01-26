@@ -1,0 +1,25 @@
+body {
+  margin-top: 60px; /* adjust this if the height of the menu bar changes */
+}
+.btn-nodejstw{
+  background-color: #15C5B7;
+  border-color: #FFFEFD;
+  color: #fff;
+}
+.btn-nodejstw a{
+  color:#fff;
+}
+.navbar-inverse .navbar-nav > li.navbar-links > a{
+  color: #15C5B7;
+  font-size: 18px;
+}
+.navbar-inverse .navbar-nav > li.navbar-links > a:hover{
+  color: #FFF;
+}
+.container.container-fall-screen{
+  background: url('../img/full-screen.png') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width:100%;
+  height: auto;
+}

@@ -1,51 +1,7 @@
-// header.jade
-block header
-    doctype html
-    html(lang='zh-TW', dir='ltr')
-      head
-        meta(charset='utf-8')
-        meta(name='viewport', content='width=device-width, initial-scale=1')
-        title Node.js Taiwan
-        // TODO
-        link(rel='shortcut icon', href='/public/images/favicon.ico', type='image/x-icon')
-        // TODO
-        link(rel='apple-touch-icon-precomposed', href='/public/images/apple-touch-icon.png')
-        link(rel='stylesheet', href='/public/css/reset.css')
-        link(rel='stylesheet', href='/public/css/node.js.taiwan.css')
-        link(rel='stylesheet', href='/public/css/animate.min.css')
-        link(href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
-        script(src='/public/vender/jquery.js')
-        script(type='text/javascript', src='/public/js/node.js.taiwan.index.js')
-      body#nodejs
+include ./head
 
-block html_header
-    //html_header.jade
-    header#header.nodejs-header.clearfix
-          h1.header__logo
-            a(href='index.html') Node&period;js Taiwan &#21488;&#28771;&#31038;&#32676;
-          nav.header-nav
-            ul.header-nav-ul
-              li.header-nav--inline
-                a(href='about.html', title='About us') &#38364;&#26044;
-              li.header-nav--inline
-                a(href='qanda.html', title='Question and Answer') &#31038;&#32676; Q&amp;A
-              li.header-nav--inline
-                a(href='#', title='job opportunity') &#24037;&#20316;&#24501;&#25165;
-              // li class="header-nav--inline"><a href="#" title="help">社群志工</a></li
-              li.header-nav--inline
-                a(href='#', title='contactus') &#32879;&#32097;&#25105;&#20497;
-          ul.header-nav-social-network
-            li
-              a(href='http://github.com/nodejs-tw', title='github')
-                i.fa.fa-github
-            li
-              a(href='http://www.facebook.com/groups/node.js.tw/', title='facebook')
-                i.fa.fa-facebook-square
-            li
-              a(href='#', title='youtube')
-                i.fa.fa-youtube
+include ./header
 
-block footer
-    .nodejs-footer-wrap
-          .nodejs-footer.nodejs__container
-            p Node.js 台灣社群聯絡 contact [AT] nodejs.tw<
+block content
+
+include ./footer

@@ -1,0 +1,16 @@
+#nodejs .nodejs-container-about-wrap{
+  padding: 20px;
+}
+#nodejs .nodejs-container-about-block{
+
+}
+#nodejs .nodejs-container-about-block-banner{
+  width: 100%;
+  background: url('../images/about-banner.png') no-repeat 50% 50%;
+  height: 200px;
+  background-size: cover;
+}
+#nodejs .nodejs-container-about-block-content{
+  margin: 20px 0;
+  line-height: 22px;
+}

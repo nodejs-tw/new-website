@@ -5,6 +5,7 @@ tags:
   - 佈署
 date: 2013-Jan-16
 type: activity
+
 ---
 Node.JS Taiwan Party 25，現正開放報名
 nodeJS 目前已經是一個趨向成熟的技術，近年內nodeJS 的發展讓 Javascript 變得更為不同，希望透過定期交流讓開發者了解目前 nodeJS 社群最新動態，從社群的討論延伸到實際的交流討論。

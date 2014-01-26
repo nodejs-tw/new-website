@@ -106,6 +106,10 @@ script.onStream = (stream) !->
     content = ''
     while data = @.read()
       content += data
+
+    if !content
+      return
+
     stream.meta.content = content
     html = jade.render template, {article: stream.meta, filename: path.join __dirname, \../../templates/template.jade}
 

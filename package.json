@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "grunt build",
+    "install": "grunt",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./server/app.js",
     "gen": "node ./tools/generator/index.js"
@@ -21,7 +21,9 @@
     "grunt-contrib-stylus": "~0.11.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-jade": "~0.8.0",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-copy": "~0.4.1",
+    "jsdom": "~0.8.11",
+    "html2markdown": "~1.1.0"
   },
   "dependencies": {
     "express": "~3.4.7",

@@ -1,0 +1,42 @@
+#nodejs .nodejs-container-article-block{
+  background: #fff;
+  padding: 20px 30px;
+  width: 70%;
+  line-height: 24px;
+  color: #333;
+  margin: 20px auto;
+}
+
+#nodejs .nodejs-container-article-block__markdown h1,
+#nodejs .nodejs-container-article-block__markdown h2,
+#nodejs .nodejs-container-article-block__markdown h3,
+#nodejs .nodejs-container-article-block__markdown h4,
+#nodejs .nodejs-container-article-block__markdown h5,
+#nodejs .nodejs-container-article-block__markdown h6{
+  display: block;
+  margin: 10px 0;
+  color: rgb(55, 75, 112);
+  font-weight: bold;
+}
+#nodejs .nodejs-container-article-block__markdown h1{
+  font-size: 30px;
+}
+
+#nodejs .nodejs-container-article-block__markdown h2{
+  font-size: 24px;
+}
+#nodejs .nodejs-container-article-block__markdown h3{
+  font-size: 22px;
+}
+#nodejs .nodejs-container-article-block__markdown h4{
+  font-size: 18px;
+}
+#nodejs .nodejs-container-article-block__markdown h5{
+  font-size: 16px;
+}
+#nodejs .nodejs-container-article-block__markdown h6{
+  font-size: 14px;
+}
+#nodejs .nodejs-container-article-block__markdown hr{
+  border: 1px solid #E7E7E7;
+}

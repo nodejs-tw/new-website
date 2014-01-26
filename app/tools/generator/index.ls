@@ -107,7 +107,7 @@ script.onStream = (stream) !->
     while data = @.read()
       content += data
     stream.meta.content = content
-    html = jade.render template, {article: stream.meta}
+    html = jade.render template, {article: stream.meta, filename: path.join __dirname, \../../templates/template.jade}
 
     mkdirp path.dirname(filepath), (err) !->
       if err

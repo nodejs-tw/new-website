@@ -17,7 +17,7 @@
     },
     "history":{
       "template":"./templates/history.jade",
-      "source": "./source/history/**/history.md",
+      "source": "./source/history/**/index.md",
       "destination": "./public/history"
     }
   }

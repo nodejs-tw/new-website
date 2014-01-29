@@ -10,5 +10,15 @@
       "source": "./source/index/**/index.md",
       "destination": "./public/index"
     },
+    "about":{
+      "template":"./templates/about.jade",
+      "source": "./source/about/**/index.md",
+      "destination": "./public/about"
+    },
+    "history":{
+      "template":"./templates/history.jade",
+      "source": "./source/history/**/history.md",
+      "destination": "./public/history"
+    }
   }
 }

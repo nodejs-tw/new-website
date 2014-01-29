@@ -15,6 +15,11 @@
       "source": "./source/about/**/index.md",
       "destination": "./public/about"
     },
+    "qanda":{
+      "template":"./templates/qanda.jade",
+      "source": "./source/qanda/**/index.md",
+      "destination": "./public/qanda"
+    },
     "history":{
       "template":"./templates/history.jade",
       "source": "./source/history/**/index.md",

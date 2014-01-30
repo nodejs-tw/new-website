@@ -25,6 +25,11 @@
       "source": "./source/contact/**/index.md",
       "destination": "./public/contact"
     },
+    "campus":{
+      "template":"./templates/campus.jade",
+      "source": "./source/campus/**/index.md",
+      "destination": "./public/campus"
+    },
     "jobs":{
       "template":"./templates/jobs.jade",
       "source": "./source/jobs/**/index.md",

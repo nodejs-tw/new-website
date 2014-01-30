@@ -1,6 +1,7 @@
 /*sticky footer examply*/
 html, body {
   height: 100%;
+  background: whitesmoke;
 }
 
 #nodejs-layout {
@@ -139,6 +140,9 @@ html, body {
   text-align: center;
   padding: 36px 0;
 }
+#nodejs .nodejs-banner a.nodejs-btn{
+  margin: 0 10px;
+}
 
 #nodejs .nodejs-banner .nodejs-banner__topnews{
   background: rgba(240, 240, 240, 0.86);
@@ -153,7 +157,7 @@ html, body {
 }
 
 #nodejs .nodejs-container{
-  /*background: whitesmoke;*/
+ /* background: whitesmoke;*/
 }
 #nodejs .nodejs-container-intro{
   padding: 30px;

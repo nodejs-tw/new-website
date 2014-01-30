@@ -71,6 +71,9 @@
   display: inline-block;
   margin-left: 20px;
 }
+#header .header-nav .nocontent.outline{
+  display: none;
+}
 #header .header-nav-ul{
   margin: 0;
   padding: 0;

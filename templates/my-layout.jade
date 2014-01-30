@@ -1,7 +1,10 @@
 include ./head
 
-include ./header
 
-block content
+#nodejs-layout
+  include ./header
+  block content
 
+  //Don't remove #layout_footer, This is for sticky footer
+  #nodejs-layout_footer
 include ./footer

@@ -1,0 +1,29 @@
+//contact.jade
+extends my-layout
+
+block content
+
+  .nodejs-container
+      .nodejs-container-intro.nodejs__container.nodejs-container__inner
+        h2.nodejs-container-intro-h2
+          i.fa.fa-terminal
+          | 工作徵才
+          span.nodejs-container-intro-h2__en Jobs
+        .nodejs-container-jobs-wrap
+          #mk.jobs.markdown-style!= article.content
+          .nodejs-container-intro-histroy-wrap
+          .nodejs-container-histroy-block.nodejs-list-style__normal
+            ul
+              li
+                a(href='#')
+                  date 02 Jan 2013
+                  | [demo data] 後端程式設計師/ Web Developer
+              li
+                a(href='#')
+                  date 02 Jan 2013
+                  | [demo data] Node.js Backend Developer
+              li
+                a(href='#')
+                  date 02 Jan 2013
+                  | &raquo;  Node&period;JS Taiwan Party 26
+

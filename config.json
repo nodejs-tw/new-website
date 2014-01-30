@@ -20,6 +20,16 @@
       "source": "./source/qanda/**/index.md",
       "destination": "./public/qanda"
     },
+    "contact":{
+      "template":"./templates/contact.jade",
+      "source": "./source/contact/**/index.md",
+      "destination": "./public/contact"
+    },
+    "jobs":{
+      "template":"./templates/jobs.jade",
+      "source": "./source/jobs/**/index.md",
+      "destination": "./public/jobs"
+    },
     "history":{
       "template":"./templates/history.jade",
       "source": "./source/history/**/index.md",

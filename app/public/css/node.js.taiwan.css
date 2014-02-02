@@ -129,9 +129,13 @@ html, body {
   background: #82CAEC;
   height: auto;
   padding-bottom: 30px;
+  background: url("/images/about-banner.png") 29% 58% no-repeat;
+  background-size: cover;
+  min-height: 340px;
+  position: relative;
 }
 
-#nodejs .nodejs-banner h2{
+/*#nodejs .nodejs-banner h2{
   font-size: 98px;
   display: block;
   font-family: sans-serif;
@@ -139,21 +143,25 @@ html, body {
   color: #fff;
   text-align: center;
   padding: 36px 0;
-}
+}*/
+
 #nodejs .nodejs-banner a.nodejs-btn{
   margin: 0 10px;
 }
 
 #nodejs .nodejs-banner .nodejs-banner__topnews{
-  background: rgba(240, 240, 240, 0.86);
-  width: 60%;
+  background: rgba(82, 226, 197, 1);
+  width: 100%;
   margin: 0 auto;
-  border-radius: 5px;
   padding: 10px;
   text-align: center;
   color: #585858;
-  border: 1px solid #FFF5F5;
   line-height: 20px;
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 #nodejs .nodejs-container{
@@ -306,4 +314,16 @@ to {background: #82CAEC;}
     display: none;
   }
 }
+
+@media screen and (max-width: 768px) {
+  #nodejs .nodejs-banner {
+    background: #fff;
+    background-image: url("/images/about-banner-small.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 60%;
+  }
+}
+
+
 

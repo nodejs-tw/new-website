@@ -21,10 +21,13 @@ script.main = !->
 script.init = (cb) !->
   console.log '  初始化'
 
+  @initProcessEvent!
+
   @basedir =  path.join __dirname, \../..
   @generator = Generator.create!
   @enum = @getTypes!
   @types = @cleanTypes process.argv.slice 2
+  @list = []
 
   if !@types.length
     @types = @enum.slice!
@@ -89,6 +92,7 @@ script.onStream = (stream) !->
 
   template = @templates[stream.data.type] || ''
   type = config.generator[stream.data.type]
+  addToList = @~addToList;
 
   source = type.source.split('*');
 
@@ -122,6 +126,49 @@ script.onStream = (stream) !->
             failed err
           else
             console.log "    成功: #{filepath}"
+            addToList stream.data.type, stream.meta.date, stream.meta.title, filepath
+
+script.addToList = (type, date, title, file) !->
+  isIndex = /index\.html/;
+
+  if !isIndex.test file
+
+    @list.push {
+      type: type
+      title: title
+      file: file
+      date: date || new Date()
+    }
+
+script.initProcessEvent = !->
+  process.on \exit, @~onProcessExists
+
+script.onProcessExists = (code) !->
+  if !code
+    console.log!
+    console.log '  建立列表'
+    console.log!
+    @list.sort @listSort
+    data = @listCategorize!
+    data = JSON.stringify data
+    listFile = path.join process.cwd!, \public/list.json 
+    console.log '    ' + listFile
+    fs.writeFileSync listFile, data
+  console.log!
+
+script.listSort = (a, b) ->
+  a.date - b.date
+
+script.listCategorize = ->
+  categories = {}
+
+  @types.forEach (type) !->
+    categories[type] = []
+
+  @list.forEach (article) !->
+    categories[article.type].push article
+
+  categories
 
 script.exit = (err) !->
   if err

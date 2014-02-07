@@ -56,3 +56,8 @@ npm start
 
 ### 修改 CSS/Javascript
 修改過 css 之後記得下 `grunt` 指令，其 generate 的路徑為 public/*。
+
+
+
+## 列表 JSON
+* http://localhost:8080/list.json

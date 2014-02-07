@@ -38,13 +38,29 @@ $.getJSON("/list.json", function(data){
       items = [];
 
   $.each( columns, function(key, obj){
-    items.push( "<li><h3><a href=" + encodeURI(convertDataFile2Url(obj.file)) + "><i class='fa fa-calendar'></i> <date>"+ convertDataDate2_yyyy_mm_dd(obj.date) + "</date>» " + obj.title + "</a></h3></li>" );
+    items.push( "<li><h3><a href=" + encodeURI(convertDataFile2Url(obj.file)) + "><i class='fa fa-calendar'></i> <date>"+ convertDataDate2_yyyy_mm_dd(obj.date) + "</date> » " + obj.title + "</a></h3></li>" );
   });
 
   $( "<ul/>", {
-      "class": "",
+      "id": "itemContainer",
       html: items.join( "" )
     }).appendTo( ".nodejs-container-histroy-block" );
+
+  /* initiate plugin */
+  $("div.holder").jPages({
+    containerID: "itemContainer",
+    perPage      : 10,
+    startPage    : 1,
+    startRange   : 1,
+    midRange     : 5,
+    endRange     : 1,
+    first        : "最前頁",
+    previous     : "上一頁",
+    next         : "下一頁",
+    last         : "最後頁",
+    animation    : false,
+    delay        : 30,
+  });
 
 });
 

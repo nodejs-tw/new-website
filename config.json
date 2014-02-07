@@ -6,7 +6,7 @@
       "destination": "./public/articles/column"
     },
     "news": {
-      "template": "./templates/column.jade",
+      "template": "./templates/news.jade",
       "source": "./source/news/**/*.md",
       "destination": "./public/articles/news"
     },

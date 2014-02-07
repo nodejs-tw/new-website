@@ -38,7 +38,7 @@ $.getJSON("/list.json", function(data){
       items = [];
 
   $.each( columns, function(key, obj){
-    items.push( "<li><a href=" + encodeURI(convertDataFile2Url(obj.file)) + "><date>"+ convertDataDate2_yyyy_mm_dd(obj.date) + "</date>» " + obj.title + "</a></li>" );
+    items.push( "<li><h3><a href=" + encodeURI(convertDataFile2Url(obj.file)) + "><i class='fa fa-calendar'></i> <date>"+ convertDataDate2_yyyy_mm_dd(obj.date) + "</date>» " + obj.title + "</a></h3></li>" );
   });
 
   $( "<ul/>", {

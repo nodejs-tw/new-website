@@ -5,6 +5,11 @@
       "source": "./source/column/**/*.md",
       "destination": "./public/articles/column"
     },
+    "news": {
+      "template": "./templates/column.jade",
+      "source": "./source/news/**/*.md",
+      "destination": "./public/articles/news"
+    },
     "index":{
       "template":"./templates/index.jade",
       "source": "./source/index/**/index.md",

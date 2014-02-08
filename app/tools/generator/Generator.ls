@@ -35,13 +35,14 @@ Generator.prototype.generate = (pattern, data || {}) ->
   @
 
 Generator.prototype.process = (fileStream) ->
+  emit = @~emit;
   stream = fileStream
     .pipe meta!
     .on \meta, (meta) !->
       stream.meta = meta
+      emit \stream, stream
     .pipe markdown!
   stream.data = fileStream.data
-  @emit \stream, stream
   @
 
 Generator.prototype.getFileStream = (file) ->

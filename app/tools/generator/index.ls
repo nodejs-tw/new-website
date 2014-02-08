@@ -90,6 +90,7 @@ script.generate = (type) !->
 script.onStream = (stream) !->
   console.log "    開始: #{stream.data.file}"
 
+  meta = stream.meta
   template = @templates[stream.data.type] || ''
   type = config.generator[stream.data.type]
   addToList = @~addToList;
@@ -114,8 +115,8 @@ script.onStream = (stream) !->
     if !content
       return
 
-    stream.meta.content = content
-    html = jade.render template, {article: stream.meta, filename: path.join __dirname, \../../templates/template.jade}
+    meta.content = content
+    html = jade.render template, {article: meta, filename: path.join __dirname, \../../templates/template.jade}
 
     mkdirp path.dirname(filepath), (err) !->
       if err
@@ -126,7 +127,7 @@ script.onStream = (stream) !->
             failed err
           else
             console.log "    成功: #{filepath}"
-            addToList stream.data.type, stream.meta.date, stream.meta.title, filepath
+            addToList stream.data.type, meta.date, meta.title, filepath
 
 script.addToList = (type, date, title, file) !->
   isIndex = /index\.html/;

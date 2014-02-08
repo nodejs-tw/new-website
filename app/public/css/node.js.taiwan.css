@@ -3,7 +3,15 @@ html, body {
   height: 100%;
   background: whitesmoke;
 }
-
+a{
+  color: #0079B3;
+  text-decoration: none;
+  font-size: 14px;
+}
+a:hover{
+  color: #666;
+  text-decoration: none;
+}
 #nodejs-layout {
   clear: both;
   min-height: 100%;
@@ -19,15 +27,7 @@ html, body {
   font-family: Arial;
   font-size: 14px;
 }
-#nodejs a{
-  color: #0079B3;
-  text-decoration: none;
-  font-size: 14px;
-}
-#nodejs a:hover{
-  color: #666;
-  text-decoration: none;
-}
+
 #nodejs .clearfix:before,
 #nodejs .clearfix:after{
   display:table;line-height:0;content:""
